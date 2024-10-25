@@ -4,6 +4,12 @@ const landing_get = (req, rsp) => {
   });
 };
 
+const landing_post = (req, rsp) => {
+  console.log(req.body);
+  rsp.status(301).end();
+};
+
 module.exports = {
-  landing_get
+  landing_get,
+  landing_post,
 }

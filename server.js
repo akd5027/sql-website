@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 
 // Middleware
 app.use(morgan('dev'));
+app.use(express.urlencoded({extended: true}));
 
 // Registering routes.
 app.use('/database', databaseRoutes);

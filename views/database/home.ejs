@@ -1,5 +1,14 @@
 <%- include('../partials/header.ejs') %>
 
   <h1>Hello Database</h1>
+  <form method="post">
+    <label for="persons_name">Name: </label>
+    <input id="persons_name" name="name" type="text" required>
+
+    <label for="persons_age">Age: </label>
+    <input id="persons_age" name="age" type="number" required>
+    <button>Submit</button>
+  </form>
+  <br>
 
 <%- include('../partials/footer.ejs') %>
