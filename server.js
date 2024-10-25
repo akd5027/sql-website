@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 
 // Registering routes.
-app.use(databaseRoutes);
+app.use('/database', databaseRoutes);
 
 app.get('/', (req, res) => {
   res.redirect('/database');
