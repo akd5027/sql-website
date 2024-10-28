@@ -1,0 +1,44 @@
+nav {
+	padding: 0px 10px;
+	border-bottom: solid;
+	border-s
+	display: flex;
+	justify-content: space-between;
+}
+nav ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+nav li{
+	list-style-type: none;
+	margin-left: 20px;
+}
+
+nav h1{
+	font-size: 32;
+	font-weight: 500;
+}
+
+form table{
+	margin-left: 20px;
+	margin-bottom: 20px;
+	border-style: solid;
+	border-radius: 10px;
+}
+
+form input{
+	border-style: none;
+}
+
+form input:focus{
+	outline: none;
+}
+
+button{
+	font-size: 1.2em;
+	padding: 3px 8px;
+	border-radius: 20px;
+	border-width: thin;
+}

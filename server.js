@@ -10,6 +10,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 // Middleware
+app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
 
