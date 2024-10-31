@@ -3,8 +3,12 @@
 <h1>Entries</h1>
 
 <table class="user-table">
+    <tr>
+        <th>Name</th>
+        <th>Count</th>
+    </tr>
 	<% users.forEach(user => { %>
-	<tr>
+	<tr class="user">
 		<td><%= user.name %></td>
 		<td><%= user.count %></td>
 	</tr>

@@ -44,12 +44,20 @@ button{
 
 .user-table{
   margin: 20px;
+  border: 2px solid inset black;
   border-radius: 20px;
-  border-width: medium;
-  background: #b2ffcb;
   border-collapse: collapse;
+  overflow: hidden;
 }
 
-.user-table td{
+.user-table td, th{
   padding: 6px 15px;
+  border-bottom: 1px solid black;
+}
+
+.user-table .user{
+  background-color: #b2ffcb;
+}
+.user-table .user:hover{
+  background-color: coral;
 }
