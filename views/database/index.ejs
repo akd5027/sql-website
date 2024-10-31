@@ -1,0 +1,14 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Entries</h1>
+
+<table class="user-table">
+	<% users.forEach(user => { %>
+	<tr>
+		<td><%= user.name %></td>
+		<td><%= user.count %></td>
+	</tr>
+	<% }) %>
+</table>
+
+<%- include('../partials/footer.ejs') %>

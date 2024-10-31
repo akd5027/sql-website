@@ -41,3 +41,15 @@ button{
 	border-radius: 20px;
 	border-width: thin;
 }
+
+.user-table{
+  margin: 20px;
+  border-radius: 20px;
+  border-width: medium;
+  background: #b2ffcb;
+  border-collapse: collapse;
+}
+
+.user-table td{
+  padding: 6px 15px;
+}

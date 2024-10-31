@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 
+const databaseController = require('./controllers/databaseController');
 const databaseRoutes = require('./routes/databaseRoutes');
 
 const port = 3000;
@@ -21,6 +22,10 @@ app.get('/', (req, res) => {
   res.redirect('/database');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+databaseController.createDatabase()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  })
+  .catch(err => console.error("Could not create database:", err));
