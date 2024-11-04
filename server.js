@@ -18,7 +18,9 @@ app.use(express.urlencoded({extended: true}));
 // Registering routes.
 app.use('/database', databaseRoutes);
 
-app.get('/', (req, res) => {
+app.use('/database/home', databaseRoutes); // included to get home url
+
+app.get('/', (req, res) => {    // when home url (localhost:3000) + "/" is used. the user is redirected
   res.redirect('/database');
 });
 
