@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize({
@@ -43,7 +44,6 @@ const landing_post = (req, rsp) => {
   rsp.status(301).end();
 };
 
-
 const database_get = async (req, res) => {
 	await User.sync();
 	const users = await User.findAll();
@@ -51,10 +51,20 @@ const database_get = async (req, res) => {
 	res.render('database/index', { title: "Users", users });
 };
 
+//const incrementCount = await name.increment('count');
+
+//const database_post = async (req, res) => { 
+//	return incrementCount;
+	
+//};
+
 module.exports = {
   landing_get,
   landing_post,
   database_get,
+
+  // front-end functions
+//  database_post,
 
   // Non-routing functions
   createDatabase,

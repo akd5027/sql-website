@@ -24,6 +24,11 @@ app.get('/', (req, res) => {    // when home url (localhost:3000) + "/" is used.
   res.redirect('/database');
 });
 
+//app.post('/database/index', (req, res) => {   // placeholder until I create the necessary steps
+
+
+//});
+
 databaseController.createDatabase()
   .then(() => {
     app.listen(port, () => {
