@@ -60,23 +60,14 @@ const database_post = async (req, res) => {
   // Make sure our server knows what the database date really is.
 	await User.sync();
 
-  console.log("Get a single row");
-
   const user = await User.findOne({ where: { name: 'julian' } });
   if (user === null) {
     console.log('Not found!');
   } else {
-    console.log(user.name, " FOUND!!!!");
+    user.increment(["count"]);
   }
 
-  console.log("Increment the count in that row");
-  user.increment(["count"]);
-
-  // Write the row back to the database (this is probably automatic).
-
-
   // Send the new data back to the user.
-
   await database_get(req, res);
 };
 
