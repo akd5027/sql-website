@@ -48,15 +48,37 @@ const database_get = async (req, res) => {
 	await User.sync();
 	const users = await User.findAll();
 
-	res.render('database/index', { title: "Users", users });
+	res.render('database/index', { 
+    title: "Users", 
+    users 
+  });
 };
 
-//const incrementCount = await name.increment('count');
 
-//const database_post = async (req, res) => { 
-//	return incrementCount;
-	
-//};
+const database_post = async (req, res) => { 
+
+  // Make sure our server knows what the database date really is.
+	await User.sync();
+
+  console.log("Get a single row");
+
+  const user = await User.findOne({ where: { name: 'julian' } });
+  if (user === null) {
+    console.log('Not found!');
+  } else {
+    console.log(user.name, " FOUND!!!!");
+  }
+
+  console.log("Increment the count in that row");
+  user.increment(["count"]);
+
+  // Write the row back to the database (this is probably automatic).
+
+
+  // Send the new data back to the user.
+
+  await database_get(req, res);
+};
 
 module.exports = {
   landing_get,
@@ -64,7 +86,7 @@ module.exports = {
   database_get,
 
   // front-end functions
-//  database_post,
+  database_post,
 
   // Non-routing functions
   createDatabase,

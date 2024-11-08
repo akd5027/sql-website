@@ -7,14 +7,14 @@
 		<tr>
         	<th>Name</th>
         	<th>Count</th>
-    	</tr>
+    </tr>
 		<% users.forEach(user => { %>  
 			
 			<form action="/database/index" method="POST">
-		<tr class="user">
-			<td><%= user.name %></td>
-			<td><button type= "submit"><%= user.count %></td>
-		</tr>  
+        <tr class="user <%= user.name %>">
+          <td><%= user.name %></td>
+          <td><%= user.count %></td>
+        </tr>  
 			</form>
 
 		<% }) %>
